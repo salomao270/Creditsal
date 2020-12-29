@@ -6,7 +6,7 @@
 
 namespace Creditsal.Api.Models
 {
-    public class Customer : ICustomer
+    public class Customer
     {
         public string Nome { get; set; }
         public int Idade { get; set; }
@@ -14,11 +14,11 @@ namespace Creditsal.Api.Models
         public Customer()
         {
         }
-        public Customer(string nome, int idade, decimal salario)
+        public Customer(string _name, int _age, decimal _salary)
         {
-            this.Nome = nome;
-            this.Idade = idade;
-            this.Salario = salario;
+            this.Nome = _name;
+            this.Idade = _age;
+            this.Salario = _salary;
         }
     }
 

@@ -8,23 +8,25 @@ namespace Creditsal.Api.Models
 {
     public class Credit
     {
+        public string Name { get; set; }
+        public decimal Salary { get; set; }
+        public decimal creditoRequestByUser { get; set; }
+        public decimal CreditValueProvided { get; set; }
+        public int QuantityOfParcels { get; set; }
+        public decimal ValueOfEachParcel { get; set; }        
         public Credit()
         {
+            // default constructor
         }
-        public Credit(string nome, decimal salario, decimal valorPedido)
+        public Credit(string _name, decimal _salary, decimal _creditRequestByCustomer)
         {
-            Nome = nome;
-            Salario = salario;
-            ValorPedido = valorPedido;
-            ValorEmprestado = 0;
-            QuantidadeParcelas = 0;
-            ValorParcela = 0;
+            Name = _name;
+            Salary = _salary;
+            creditoRequestByUser = _creditRequestByCustomer;
+            CreditValueProvided = 0;
+            QuantityOfParcels = 0;
+            ValueOfEachParcel = 0;
         }
-        public string Nome { get; set; }
-        public decimal Salario { get; set; }
-        public decimal ValorPedido { get; set; }
-        public decimal ValorEmprestado { get; set; }
-        public int QuantidadeParcelas { get; set; }
-        public decimal ValorParcela { get; set; }
+
     }
 }

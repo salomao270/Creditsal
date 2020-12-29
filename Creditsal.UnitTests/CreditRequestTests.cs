@@ -32,8 +32,8 @@ namespace Creditsal.UnitTests
             var credit = creditRequest.GetCredit(customer);
 
             // Assert
-            Assert.AreEqual(customer.Salario * 100 / 100, credit.ValorEmprestado);
-            Assert.LessOrEqual(credit.ValorParcela, customer.Salario * 40 / 100);
+            Assert.AreEqual(customer.Salario * 100 / 100, credit.CreditValueProvided);
+            Assert.LessOrEqual(credit.ValueOfEachParcel, customer.Salario * 40 / 100);
         }
 
         [Test]
@@ -50,8 +50,8 @@ namespace Creditsal.UnitTests
             var credit = creditRequest.GetCredit(customer);
 
             // Assert
-            Assert.AreEqual(customer.Salario * 90 / 100, credit.ValorEmprestado);
-            Assert.LessOrEqual(credit.ValorParcela, customer.Salario * 5 / 100);
+            Assert.AreEqual(customer.Salario * 90 / 100, credit.CreditValueProvided);
+            Assert.LessOrEqual(credit.ValueOfEachParcel, customer.Salario * 5 / 100);
         }
 
         [Test]
@@ -68,8 +68,8 @@ namespace Creditsal.UnitTests
             var credit = creditRequest.GetCredit(customer);
 
             // Assert
-            Assert.AreEqual(customer.Salario * 70 / 100, credit.ValorEmprestado);
-            Assert.LessOrEqual(credit.ValorParcela, customer.Salario * 20 / 100);
+            Assert.AreEqual(customer.Salario * 70 / 100, credit.CreditValueProvided);
+            Assert.LessOrEqual(credit.ValueOfEachParcel, customer.Salario * 20 / 100);
         }
 
         [Test]
@@ -85,7 +85,7 @@ namespace Creditsal.UnitTests
             var credit = creditRequest.GetCredit(customer);
 
             // Assert
-            Assert.AreEqual(customer.Salario * 20 / 100, credit.ValorEmprestado);
+            Assert.AreEqual(customer.Salario * 20 / 100, credit.CreditValueProvided);
         }
         #endregion
 
@@ -104,7 +104,7 @@ namespace Creditsal.UnitTests
                 var credit = creditRequest.GetCredit(customerTest);
 
             // Assert
-                Assert.AreEqual(customerTest.Salario * 100 / 100, credit.ValorEmprestado);
+                Assert.AreEqual(customerTest.Salario * 100 / 100, credit.CreditValueProvided);
             }
         }
         #endregion
@@ -124,7 +124,7 @@ namespace Creditsal.UnitTests
                 var credit = creditRequest.GetCredit(customerTest);
 
             // Assert
-                Assert.LessOrEqual(credit.ValorParcela, customerTest.Salario * 5 / 100);
+                Assert.LessOrEqual(credit.ValueOfEachParcel, customerTest.Salario * 5 / 100);
             }
         }
         #endregion

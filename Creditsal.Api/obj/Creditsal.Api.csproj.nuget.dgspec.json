@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\salomao.ferreira\\source\\repos\\Creditsal\\Creditsal.Api\\Creditsal.Api.csproj": {}
+    "C:\\source\\Creditsal\\Creditsal\\Creditsal.Api\\Creditsal.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\salomao.ferreira\\source\\repos\\Creditsal\\Creditsal.Api\\Creditsal.Api.csproj": {
+    "C:\\source\\Creditsal\\Creditsal\\Creditsal.Api\\Creditsal.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\salomao.ferreira\\source\\repos\\Creditsal\\Creditsal.Api\\Creditsal.Api.csproj",
+        "projectUniqueName": "C:\\source\\Creditsal\\Creditsal\\Creditsal.Api\\Creditsal.Api.csproj",
         "projectName": "Creditsal.Api",
-        "projectPath": "C:\\Users\\salomao.ferreira\\source\\repos\\Creditsal\\Creditsal.Api\\Creditsal.Api.csproj",
+        "projectPath": "C:\\source\\Creditsal\\Creditsal\\Creditsal.Api\\Creditsal.Api.csproj",
         "packagesPath": "C:\\Users\\salomao.ferreira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\salomao.ferreira\\source\\repos\\Creditsal\\Creditsal.Api\\obj\\",
+        "outputPath": "C:\\source\\Creditsal\\Creditsal\\Creditsal.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\salomao.ferreira\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

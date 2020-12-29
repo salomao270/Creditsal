@@ -10,57 +10,65 @@ namespace Creditsal.Api.Models
 {
     public class CreditRequest
     {
-        private string Nome { get; set; }
-        private decimal ValorPedido { get; set; }
-        private Credit credit { get; set; }
-        public CreditRequest(string nome, decimal valorPedido)
+        private string Name { get; set; }
+        private decimal CreditRequestByUser { get; set; }
+        private Credit CreditObj { get; set; }
+        public CreditRequest()
         {
-            this.Nome = nome;
-            this.ValorPedido = valorPedido;
+            // default constructor
+        }
+        public CreditRequest(string _name, decimal _creditRequestByUser)
+        {
+            this.Name = _name;
+            this.CreditRequestByUser = _creditRequestByUser;
         }
 
-        public Credit GetCredit(ICustomer customer)
+        public Credit GetCredit(Customer _customer)
         {
-            credit = new Credit(customer.Nome, customer.Salario, this.ValorPedido);
+            CreditObj = new Credit(_customer.Nome, _customer.Salario, this.CreditRequestByUser);
 
-            credit.ValorEmprestado =
-                  customer.Idade > 80 ? (customer.Salario * 20 / 100)
-                : customer.Idade > 50 ? (customer.Salario * 70 / 100)
-                : customer.Idade > 30 ? (customer.Salario * 90 / 100)
-                : customer.Idade > 20 ? (customer.Salario * 100 / 100)
+            CreditObj.CreditValueProvided =
+                  _customer.Idade > 80 ? (_customer.Salario * 20 / 100)
+                : _customer.Idade > 50 ? (_customer.Salario * 70 / 100)
+                : _customer.Idade > 30 ? (_customer.Salario * 90 / 100)
+                : _customer.Idade > 20 ? (_customer.Salario * 100 / 100)
                 : 0;
 
-            credit.ValorParcela =
-                  customer.Salario >= 1000.0M && customer.Salario <= 2000.0M ? (customer.Salario * 5 / 100)
-                : customer.Salario >= 2001.0M && customer.Salario <= 3000.0M ? (customer.Salario * 10 / 100)
-                : customer.Salario >= 3001.0M && customer.Salario <= 4000.0M ? (customer.Salario * 15 / 100)
-                : customer.Salario >= 4001.0M && customer.Salario <= 5000.0M ? (customer.Salario * 20 / 100)
-                : customer.Salario >= 5001.0M && customer.Salario <= 6000.0M ? (customer.Salario * 25 / 100)
-                : customer.Salario >= 6001.0M && customer.Salario <= 7000.0M ? (customer.Salario * 30 / 100)
-                : customer.Salario >= 7001.0M && customer.Salario <= 8000.0M ? (customer.Salario * 35 / 100)
-                : customer.Salario >= 8001.0M && customer.Salario <= 9000.0M ? (customer.Salario * 40 / 100)
-                : customer.Salario >= 9001.0M ? (customer.Salario * 45 / 100)
+            CreditObj.ValueOfEachParcel =
+                  _customer.Salario >= 1000.0M && _customer.Salario <= 2000.0M ? (_customer.Salario * 5 / 100)
+                : _customer.Salario >= 2001.0M && _customer.Salario <= 3000.0M ? (_customer.Salario * 10 / 100)
+                : _customer.Salario >= 3001.0M && _customer.Salario <= 4000.0M ? (_customer.Salario * 15 / 100)
+                : _customer.Salario >= 4001.0M && _customer.Salario <= 5000.0M ? (_customer.Salario * 20 / 100)
+                : _customer.Salario >= 5001.0M && _customer.Salario <= 6000.0M ? (_customer.Salario * 25 / 100)
+                : _customer.Salario >= 6001.0M && _customer.Salario <= 7000.0M ? (_customer.Salario * 30 / 100)
+                : _customer.Salario >= 7001.0M && _customer.Salario <= 8000.0M ? (_customer.Salario * 35 / 100)
+                : _customer.Salario >= 8001.0M && _customer.Salario <= 9000.0M ? (_customer.Salario * 40 / 100)
+                : _customer.Salario >= 9001.0M ? (_customer.Salario * 45 / 100)
                 : 0;
 
             try
             {
-                // descobre qual a quantidade da parcela e valida se ao final resultará no valor do emprestimo total (resto desta divisao deve ser = 0).
+                // Descobre qual a quantidade da parcela e valida se ao final resultará no valor do emprestimo total (resto desta divisao deve ser = 0).
                 // se nao (resto desta divisao != 0, significa que após a ultima parcela sobrará algum valor para resultar no valor do emprestimo total), 
                 // entao, este código decrementa o valor da parcela, até encontrar um valor de parcela que ao final resultará no valor do emprestimo total (resto desta divisão = 0)
-                while ((credit.ValorEmprestado % credit.ValorParcela) != 0.0M)
+                while ((CreditObj.CreditValueProvided % CreditObj.ValueOfEachParcel) != 0.0M)
                 {
-                    credit.ValorParcela -= 0.1M;
+                    CreditObj.ValueOfEachParcel -= 0.1M;
                 }
 
-                // calcula a quantidade de parcelas
-                credit.QuantidadeParcelas = (int)(credit.ValorEmprestado / credit.ValorParcela);
+                // Calcula a quantidade de parcelas
+                CreditObj.QuantityOfParcels = (int)(CreditObj.CreditValueProvided / CreditObj.ValueOfEachParcel);
             }
             catch (ArithmeticException e)
             {
-                throw new Exception(e.ToString());
+                throw new Exception($"Error while calculating, please try again, error: ", e);
+            }
+            catch (Exception e) 
+            {
+                throw new Exception($"Error, please try again, error: ", e);
             }
 
-            return credit;
+            return CreditObj;
         }
 
     }

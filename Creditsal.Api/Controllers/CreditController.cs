@@ -17,43 +17,51 @@ namespace Creditsal.Api.Controllers
 {
     public class CreditController : Controller
     {
-        #region POST
-        [HttpPost("api/credito/{nome}/{valorPedido}")]
-        public IActionResult PostCredit (string nome, decimal valorPedido)
+        [HttpGet("")]
+        [HttpGet("Home")]
+        [HttpGet("Home/Index")]
+        public IActionResult Index() 
         {
-            if (nome == "" || valorPedido <= 0)
+            return View();
+        }
+
+        #region POST
+        // [HttpPost("api/credito/{nome}/{valorPedido}")]
+        [HttpPost("api/credito/{_name}/{_creditRequestByUser}")]
+        public IActionResult PostCredit (string _name, decimal _creditRequestByUser)
+        {
+            if (String.IsNullOrWhiteSpace(_name) || _creditRequestByUser <= 0)
             {
-                return Content("Nome ou Valor Pedido invalido. Tente novamente");
+                return Content("Name or credit request is invalid. Try again.");
             }
 
-            // consulta todos os Customers na API externa
-            var externalCustomers = new List<Customer>();
-            externalCustomers = GetExternalCustomers();
+            var customers = new List<Customer>();
+            customers = GetCustomers();
             
-            if (externalCustomers.Count == 0 )
+            if (customers.Count == 0 )
             {
-                throw new InvalidOperationException("Nao foram encontrados clientes cadastrados no sistema externo");
+                throw new InvalidOperationException("No customers found");
             }
             
-            var foundCustomer = externalCustomers.Find(c => c.Nome == nome);
+            var foundCustomer = customers.Find(c => c.Nome == _name);
 
             if (foundCustomer is null)
             {
-                return Content("Cliente não encontrado. Tente novamente");
+                return Content("No customer found");
             }
             
-            var creditRequest = new CreditRequest(nome, valorPedido);
+            var creditRequestObj = new CreditRequest(_name, _creditRequestByUser);
             
-            // calcula o credito baseado no salario e idade do Customer filtrado e retorna um credito com os valores calculados
-            var credit = creditRequest.GetCredit(foundCustomer);
+            // It calculates the credit available based on Customer age and salary - then return a Credit object
+            var creditObj = creditRequestObj.GetCredit(foundCustomer);
 
-            return Ok(credit);
+            return Ok(creditObj);
         }
         #endregion
 
-        #region GET - CONSULTA API EXTERNA
-        [HttpGet("api/clientes")]
-        public List<Customer> GetExternalCustomers() 
+        #region GET CUSTOMER FROM EXTERNAL API
+        [HttpGet("api/customers")]
+        public List<Customer> GetCustomers() 
         {
             WebRequest request = HttpWebRequest.Create("http://www.mocky.io/v2/5e2b3b8d32000054001c7109");
         
