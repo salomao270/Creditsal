@@ -1,19 +1,19 @@
 
 Business rules of Credit project Web API
-<br/><br/>
-1. It is a system that receive a customer name and a desired credit value.
-<br/><br/>
-2. This system will consult an external API that returns a list of registered customers (name, age and salary).
-<br/><br/>
-3. Then it will search in that list the customer who was passed in API by parameter and calculate how much of credit value this customer may receive, how much of each parcel and how many parcels the credit will be paid.
-<br/><br/>
-4. Depending on customer age, the customer may receive only a percentage of his salary as credit value
+
+<p>1. It is a system that receive a customer name and a desired credit value.
+
+<p>2. This system will consult an external API that returns a list of registered customers (name, age and salary).
+
+<p>3. Then it will search in that list the customer who was passed in API by parameter and calculate how much of credit value this customer may receive, how much of each parcel and how many parcels the credit will be paid.
+
+<p>4. Depending on customer age, the customer may receive only a percentage of his salary as credit value
 	<p>&nbsp;&nbsp;&nbsp;•	Age higher than 80, may receive until 20% of his salary
 	<p>&nbsp;&nbsp;&nbsp;•	Age higher than 50, may receive until 70% of his salary
 	<p>&nbsp;&nbsp;&nbsp;•	Age higher than 30, may receive until 90% of his salary
 	<p>&nbsp;&nbsp;&nbsp;•	Age higher than 20, may receive until 100% of his salary
-<p><p>
-5. Depending on customer salary, the parcel may be compromise only a percentage of his salary
+
+<p>5. Depending on customer salary, the parcel may be compromise only a percentage of his salary
 	<p>&nbsp;&nbsp;&nbsp;•	From 1000 to 2000 R$, the parcel may compromise 5% of his salary
 	<p>&nbsp;&nbsp;&nbsp;•	From 2001 to 3000 R$, the parcel may compromise 10% of his salary
 	<p>&nbsp;&nbsp;&nbsp;•	From 3001 to 4000 R$, the parcel may compromise 15% of his salary
