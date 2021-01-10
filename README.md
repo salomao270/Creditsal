@@ -8,28 +8,28 @@ Business rules of Credit project Web API
 3. Then it will search in that list the customer who was passed in API by parameter and calculate how much of credit value this customer may receive, how much of each parcel and how many parcels the credit will be paid.
 
 4. Depending on customer age, the customer may receive only a percentage of his salary as credit value
-	•	Age higher than 80, may receive until 20% of his salary
-	•	Age higher than 50, may receive until 70% of his salary
-	•	Age higher than 30, may receive until 90% of his salary
-	•	Age higher than 20, may receive until 100% of his salary
-
+	<p>&nbsp;&nbsp;&nbsp;•	Age higher than 80, may receive until 20% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	Age higher than 50, may receive until 70% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	Age higher than 30, may receive until 90% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	Age higher than 20, may receive until 100% of his salary
+<p><p>
 5. Depending on customer salary, the parcel may be compromise only a percentage of his salary
-	•	From 1000 to 2000 R$, the parcel may compromise 5% of his salary
-	•	From 2001 to 3000 R$, the parcel may compromise 10% of his salary
-	•	From 3001 to 4000 R$, the parcel may compromise 15% of his salary
-	•	From 4001 to 5000 R$, the parcel may compromise 20% of his salary
-	•	From 5001 to 6000 R$, the parcel may compromise 25% of his salary
-	•	From 6001 to 7000 R$, the parcel may compromise 30% of his salary
-	•	From 7001 to 8000 R$, the parcel may compromise 35% of his salary
-	•	From 8001 to 9000 R$, the parcel may compromise 40% of his salary
-	•	From 9001 R$, a parcela poderá comprometer 45% of his salary
-
+	<p>&nbsp;&nbsp;&nbsp;•	From 1000 to 2000 R$, the parcel may compromise 5% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	From 2001 to 3000 R$, the parcel may compromise 10% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	From 3001 to 4000 R$, the parcel may compromise 15% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	From 4001 to 5000 R$, the parcel may compromise 20% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	From 5001 to 6000 R$, the parcel may compromise 25% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	From 6001 to 7000 R$, the parcel may compromise 30% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	From 7001 to 8000 R$, the parcel may compromise 35% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	From 8001 to 9000 R$, the parcel may compromise 40% of his salary
+	<p>&nbsp;&nbsp;&nbsp;•	From 9001 R$, a parcela poderá comprometer 45% of his salary
+<br/><br/>
 6. It does not permit that API receive a negative credit value.
-
+<br/><br/>
 7. It does not permit that APi receive a zero credit value.
-
+<br/><br/>
 8. This Web API will have an input endpoint that respect the contact below:
-
+<br/><br/>
 Path: api/credito/{nome}/{valorPedido}
 Response: 
 {
@@ -48,7 +48,7 @@ Translation to english
     valor Emprestado = credit value provided
     quantidade Parcelas = quantity of parcels
     valor parcel = value of each parcel
-
+<br/><br/>
 9. This Web API will have to consult an external API in the URL "http://www.mocky.io/v2/5e2b3b8d32000054001c7109" that has an object as response like bellow:
 
 [
