@@ -41,20 +41,19 @@ Response:
     "valorParcela": 5.0 -- decimal
 }
 
-Translation to english
-    nome = name
-    salario = salary
-    valor Pedido = _credit request by customer
-    valor Emprestado = credit value provided
-    quantidade Parcelas = quantity of parcels
-    valor parcel = value of each parcel
+Translation to english:
+    <br/>nome = name
+    <br/>salario = salary
+    <br/>valor Pedido = credit value request by customer
+    <br/>valor Emprestado = credit value provided
+    <br/>quantidade Parcelas = quantity of parcels
+    <br/>valor parcela = value of each parcel
 <br/><br/>
-9. This Web API will have to consult an external API in the URL "http://www.mocky.io/v2/5e2b3b8d32000054001c7109" that has an object as response like bellow:
-
-[
-                {
-                                "Nome": "string",
-                                "Idade": 0, -- int
-                                "Salario": 1.0 -- decimal
-                }
-]
+9. This Web API has to consult an external API in the URL "http://www.mocky.io/v2/5e2b3b8d32000054001c7109" that has an JSON object as response like bellow:
+<br/>[
+<br/>&nbsp;                {
+<br/>&nbsp;&nbsp;                                "Nome": "string",
+<br/>&nbsp;&nbsp;                                "Idade": 0, -- int
+<br/>&nbsp;&nbsp;                                "Salario": 1.0 -- decimal
+<br/>&nbsp;                }
+<br/>]
