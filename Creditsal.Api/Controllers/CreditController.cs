@@ -27,10 +27,10 @@ namespace Creditsal.Api.Controllers
 
         #region POST
         // [HttpPost("api/credito/{nome}/{valorPedido}")]
-        [HttpPost("api/credito/{_name}/{_creditRequestByUser}")]
-        public IActionResult PostCredit (string _name, decimal _creditRequestByUser)
+        [HttpPost("api/credit/{name}/{creditRequestByUser}")]
+        public IActionResult PostCredit (string name, decimal creditRequestByUser)
         {
-            if (String.IsNullOrWhiteSpace(_name) || _creditRequestByUser <= 0)
+            if (String.IsNullOrWhiteSpace(name) || creditRequestByUser <= 0)
             {
                 return Content("Name or credit request is invalid. Try again.");
             }
@@ -43,14 +43,14 @@ namespace Creditsal.Api.Controllers
                 throw new InvalidOperationException("No customers found");
             }
             
-            var foundCustomer = customers.Find(c => c.Nome == _name);
+            var foundCustomer = customers.Find(c => c.Nome == name);
 
             if (foundCustomer is null)
             {
                 return Content("No customer found");
             }
             
-            var creditRequestObj = new CreditRequest(_name, _creditRequestByUser);
+            var creditRequestObj = new CreditRequest(name, creditRequestByUser);
             
             // It calculates the credit available based on Customer age and salary - then return a Credit object
             var creditObj = creditRequestObj.GetCredit(foundCustomer);

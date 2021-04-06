@@ -10,8 +10,8 @@ namespace Creditsal.Api.Models
     {
         public string Name { get; set; }
         public decimal Salary { get; set; }
-        public decimal creditoRequestByUser { get; set; }
-        public decimal CreditValueProvided { get; set; }
+        public decimal CreditRequestByUser { get; set; }
+        public decimal CreditProvided { get; set; }
         public int QuantityOfParcels { get; set; }
         public decimal ValueOfEachParcel { get; set; }        
         public Credit()
@@ -22,8 +22,8 @@ namespace Creditsal.Api.Models
         {
             Name = _name;
             Salary = _salary;
-            creditoRequestByUser = _creditRequestByCustomer;
-            CreditValueProvided = 0;
+            CreditRequestByUser = _creditRequestByCustomer;
+            CreditProvided = 0;
             QuantityOfParcels = 0;
             ValueOfEachParcel = 0;
         }

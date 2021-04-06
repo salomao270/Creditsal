@@ -27,11 +27,11 @@ namespace Creditsal.Api.Models
         {
             CreditObj = new Credit(_customer.Nome, _customer.Salario, this.CreditRequestByUser);
 
-            CreditObj.CreditValueProvided =
+            CreditObj.CreditProvided =
                   _customer.Idade > 80 ? (_customer.Salario * 20 / 100)
                 : _customer.Idade > 50 ? (_customer.Salario * 70 / 100)
                 : _customer.Idade > 30 ? (_customer.Salario * 90 / 100)
-                : _customer.Idade > 20 ? (_customer.Salario * 100 / 100)
+                : _customer.Idade >= 20 ? (_customer.Salario * 100 / 100)
                 : 0;
 
             CreditObj.ValueOfEachParcel =
@@ -51,13 +51,13 @@ namespace Creditsal.Api.Models
                 // Descobre qual a quantidade da parcela e valida se ao final resultará no valor do emprestimo total (resto desta divisao deve ser = 0).
                 // se nao (resto desta divisao != 0, significa que após a ultima parcela sobrará algum valor para resultar no valor do emprestimo total), 
                 // entao, este código decrementa o valor da parcela, até encontrar um valor de parcela que ao final resultará no valor do emprestimo total (resto desta divisão = 0)
-                while ((CreditObj.CreditValueProvided % CreditObj.ValueOfEachParcel) != 0.0M)
+                while ((CreditObj.CreditProvided % CreditObj.ValueOfEachParcel) != 0.0M)
                 {
                     CreditObj.ValueOfEachParcel -= 0.1M;
                 }
 
                 // Calcula a quantidade de parcelas
-                CreditObj.QuantityOfParcels = (int)(CreditObj.CreditValueProvided / CreditObj.ValueOfEachParcel);
+                CreditObj.QuantityOfParcels = (int)(CreditObj.CreditProvided / CreditObj.ValueOfEachParcel);
             }
             catch (ArithmeticException e)
             {
