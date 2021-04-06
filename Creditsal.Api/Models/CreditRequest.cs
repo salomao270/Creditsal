@@ -15,7 +15,7 @@ namespace Creditsal.Api.Models
         private Credit CreditObj { get; set; }
         public CreditRequest()
         {
-            // default constructor
+            
         }
         public CreditRequest(string _name, decimal _creditRequestByUser)
         {
