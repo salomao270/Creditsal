@@ -30,7 +30,7 @@ namespace Creditsal.UnitTests
             var credit = creditRequest.GetCredit(customer);
 
             // Assert
-            Assert.AreEqual(8236.0 * 100 / 100, credit.CreditValueProvided);
+            Assert.AreEqual(8236.0, credit.CreditValueProvided);
             Assert.LessOrEqual(credit.ValueOfEachParcel, customer.Salario * 40 / 100);
         }
 
