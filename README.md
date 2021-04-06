@@ -30,24 +30,17 @@ Business rules of Credit project Web API
 <br/><br/>
 8. This Web API will have an input endpoint that respect the contact below:
 <br/><br/>
-Path: api/credito/{nome}/{valorPedido}
+Path: api/credit/{name}/{creditRequestByUser}
 Response: 
 {
-    "nome": "string",
-    "salario": 1.0, -- decimal
-    "valorPedido": 1.0, -- decimal
-    "valorEmprestado": 2.0, -- decimal
-    "quantidadeParcelas": 4,  -- int
-    "valorParcela": 5.0 -- decimal
+    "name": "string",
+    "salary": 1.0, -- decimal
+    "creditRequestByUser": 1.0, -- decimal
+    "creditProvided": 2.0, -- decimal
+    "quantityOfParcels": 4,  -- int
+    "valueOfEachParcel": 5.0 -- decimal
 }
 
-Translation to english:
-    <br/>nome = name
-    <br/>salario = salary
-    <br/>valor Pedido = credit value request by customer
-    <br/>valor Emprestado = credit value provided
-    <br/>quantidade Parcelas = quantity of parcels
-    <br/>valor parcela = value of each parcel
 <br/><br/>
 9. This Web API has to consult an external API in the URL "http://www.mocky.io/v2/5e2b3b8d32000054001c7109" that has an JSON object as response like bellow:
 <br/>[
