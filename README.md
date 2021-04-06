@@ -32,14 +32,14 @@ Business rules of Credit project Web API
 <br/><br/>
 Path: api/credit/{name}/{creditRequestByUser}
 Response: 
-{
-    "name": "string",
-    "salary": 1.0, -- decimal
-    "creditRequestByUser": 1.0, -- decimal
-    "creditProvided": 2.0, -- decimal
-    "quantityOfParcels": 4,  -- int
-    "valueOfEachParcel": 5.0 -- decimal
-}
+<br/>{
+<br/>&nbsp;    "name": "string",
+<br/>&nbsp;&nbsp;    "salary": 1.0, -- decimal
+<br/>&nbsp;&nbsp;    "creditRequestByUser": 1.0, -- decimal
+<br/>&nbsp;&nbsp;    "creditProvided": 2.0, -- decimal
+<br/>&nbsp;&nbsp;    "quantityOfParcels": 4,  -- int
+<br/>&nbsp;&nbsp;    "valueOfEachParcel": 5.0 -- decimal
+<br/>}
 
 <br/><br/>
 9. This Web API has to consult an external API in the URL "http://www.mocky.io/v2/5e2b3b8d32000054001c7109" that has an JSON object as response like bellow:
