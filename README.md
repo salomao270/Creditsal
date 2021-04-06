@@ -1,5 +1,10 @@
+<h2> Web API with ASP.NET Core - Demo using "Postman Tool for API Testing":<br/><br/></h2><h3>GET a customer object</h3>
 
-Business rules of Credit project Web API
+![postman1](https://user-images.githubusercontent.com/9018950/113656820-05f0ba80-9673-11eb-84a5-83a495b99d8f.png)
+<br/><br/><h3>POST that customer name and salary to process and return the credit </h3>
+![postman2](https://user-images.githubusercontent.com/9018950/113656834-0c7f3200-9673-11eb-88c9-6801d1fe9098.png)
+<br/>
+<h2>Business rules of Creditsal Web API project</h2>
 
 <p>1. It is a system that receive a customer name and a desired credit value.
 
@@ -30,25 +35,18 @@ Business rules of Credit project Web API
 <br/><br/>
 8. This Web API will have an input endpoint that respect the contact below:
 <br/><br/>
-Path: api/credito/{nome}/{valorPedido}
+Path: api/credit/{name}/{creditRequestByUser}
 Response: 
-{
-    "nome": "string",
-    "salario": 1.0, -- decimal
-    "valorPedido": 1.0, -- decimal
-    "valorEmprestado": 2.0, -- decimal
-    "quantidadeParcelas": 4,  -- int
-    "valorParcela": 5.0 -- decimal
-}
+<br/>{
+<br/>&nbsp;    "name": "string",
+<br/>&nbsp;&nbsp;    "salary": 1.0, -- decimal
+<br/>&nbsp;&nbsp;    "creditRequestByUser": 1.0, -- decimal
+<br/>&nbsp;&nbsp;    "creditProvided": 2.0, -- decimal
+<br/>&nbsp;&nbsp;    "quantityOfParcels": 4,  -- int
+<br/>&nbsp;&nbsp;    "valueOfEachParcel": 5.0 -- decimal
+<br/>}
 
-Translation to english:
-    <br/>nome = name
-    <br/>salario = salary
-    <br/>valor Pedido = credit value request by customer
-    <br/>valor Emprestado = credit value provided
-    <br/>quantidade Parcelas = quantity of parcels
-    <br/>valor parcela = value of each parcel
-<br/><br/>
+<br/>
 9. This Web API has to consult an external API in the URL "http://www.mocky.io/v2/5e2b3b8d32000054001c7109" that has an JSON object as response like bellow:
 <br/>[
 <br/>&nbsp;                {
