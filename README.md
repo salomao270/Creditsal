@@ -1,10 +1,10 @@
-<h2> Web API with ASP.NET Core - Demo using "Postman Tool for API Testing":<br/><br/>
+<h2> Web API with ASP.NET Core - Demo using "Postman Tool for API Testing":<br/><br/></h2>
 
 ![postman1](https://user-images.githubusercontent.com/9018950/113656820-05f0ba80-9673-11eb-84a5-83a495b99d8f.png)
 <br/><br/>
 ![postman2](https://user-images.githubusercontent.com/9018950/113656834-0c7f3200-9673-11eb-88c9-6801d1fe9098.png)
 <br/>
-<h2>Business rules of Creditsal Web API project
+<h2>Business rules of Creditsal Web API project</h2>
 
 <p>1. It is a system that receive a customer name and a desired credit value.
 
