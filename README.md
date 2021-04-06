@@ -1,5 +1,10 @@
+<h2> Web API with ASP.NET Core - Demo:<br/>
 
-Business rules of Credit project Web API
+![postman1](https://user-images.githubusercontent.com/9018950/113656820-05f0ba80-9673-11eb-84a5-83a495b99d8f.png)
+<br/><br/>
+![postman2](https://user-images.githubusercontent.com/9018950/113656834-0c7f3200-9673-11eb-88c9-6801d1fe9098.png)
+<br/>
+<h2>Business rules of Creditsal Web API project
 
 <p>1. It is a system that receive a customer name and a desired credit value.
 
@@ -41,7 +46,7 @@ Response:
 <br/>&nbsp;&nbsp;    "valueOfEachParcel": 5.0 -- decimal
 <br/>}
 
-<br/><br/>
+<br/>
 9. This Web API has to consult an external API in the URL "http://www.mocky.io/v2/5e2b3b8d32000054001c7109" that has an JSON object as response like bellow:
 <br/>[
 <br/>&nbsp;                {
